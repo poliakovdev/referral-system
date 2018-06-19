@@ -1,0 +1,27 @@
+#header{
+    background-color: #fff;
+    padding: 25px;
+    text-align: center;
+}
+#header h1{
+    margin: 30px;
+}
+
+.form-wrap{
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+.form-wrap input{
+    padding: 10px;
+}
+.form-wrap button{
+    display: block;
+    margin: 0 auto;
+}
+.form-wrap small{
+    display: block;
+    padding: 10px;
+}

@@ -1,0 +1,20 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+
+    app.form.registration:
+        class: AppBundle\Form\RegistrationFormType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+    app.redirect_after_registration:
+        class: AppBundle\EventListener\RedirectAfterRegistration
+        autowire: true
+        tags:
+            - { name: kernel.event_subscriber }

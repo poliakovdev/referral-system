@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="form-wrap">
+
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+    <div class="form-group">
+        {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'placeholder': 'first name'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder': 'login'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'email'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control', 'placeholder': 'password'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control', 'placeholder': 'confirm password'}}) }}
+    </div>
+    <input class="btn btn-outline-success" type="submit" value="{{ 'register'|trans }}" />
+    <small>Already have an account?</small>
+    <a class="btn btn-outline-success" href="{{ path('fos_user_security_login') }}">{{ 'login'|trans({}, 'FOSUserBundle') }}</a>
+
+    {{ form_end(form) }}
+
+</div>

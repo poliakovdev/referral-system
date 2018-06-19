@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="container">
+                        <h1>Welcome to ref, {{ username }}</h1>
+                        <div class="form-wrap">
+                            {{ form_start(form) }}
+                                <div class="form-group">
+                                    {{ form_widget(form.ref, {'attr': {'class': 'form-control', 'placeholder': 'ref url', 'value': ref}}) }}
+                                </div>
+                                {{ form_widget(form.generate, {'attr': {'class': 'btn btn-success', 'disabled': disabledStatus}}) }}
+                            {{ form_end(form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="ref_wrapper">
+        <div class="container">
+            <div class="row"></div>
+                <h2>Referrals:</h2>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for ref in referrals %}
+                            <tr>
+                                <td>{{ ref.username|e }}</li></td>
+                                <td>{{ ref.email|e }}</li></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

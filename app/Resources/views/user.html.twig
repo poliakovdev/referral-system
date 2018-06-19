@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="container">
+                        <h1>Welcome, {{ app.user.username }}</h1>
+                        <nav>
+                            <a class="btn btn-outline-success" href="{{ path('fos_user_security_logout') }}">
+                                {{ 'Logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                            <br><br>
+                            <a class="btn btn-outline-success" href="{{ path('ref') }}">ref</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
