@@ -20,7 +20,6 @@ class UserController extends Controller
     public function indexAction(Request $request)
     {
         $username = $this->getUser();
-        // replace this example code with whatever you need
         return $this->render('user.html.twig', array(
             'text' => $username,
         ));
